@@ -1,0 +1,83 @@
+[2018-08-14 08:52:30] [INFO] - com.edu.service.impl.UserService.show(UserService.java:37) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-14 08:52:31] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-14 08:52:42] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-14 08:53:09] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!
+[2018-08-14 08:53:37] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-14 08:55:31] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 08:55:31] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=15, nickname='啊1', age=34, mail='null'}
+[2018-08-14 08:55:44] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=15, nickname='啊1', age=34, mail='null'}
+[2018-08-14 08:56:16] [INFO] - com.edu.service.impl.UserService.delUserById(UserService.java:62) - 删除该用户完成!
+[2018-08-14 09:13:42] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!
+[2018-08-14 09:15:52] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:15:53] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 09:17:06] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:17:06] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 09:18:20] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:18:21] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:18:53] [INFO] - com.edu.service.impl.UserService.delUserById(UserService.java:62) - 删除该用户完成!
+[2018-08-14 09:20:50] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:20:51] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:21:47] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:21:48] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:22:33] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!
+[2018-08-14 09:23:25] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:23:25] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=17, nickname='啊1', age=34, mail='null'}
+[2018-08-14 09:23:50] [INFO] - com.edu.service.impl.UserService.delUserById(UserService.java:62) - 删除该用户完成!
+[2018-08-14 09:24:32] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!
+[2018-08-14 09:24:46] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:24:46] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 09:25:09] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:25:09] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 09:25:29] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:25:29] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=18, nickname='啊1', age=34, mail='null'}
+[2018-08-14 09:25:52] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=18, nickname='啊1', age=34, mail='null'}
+[2018-08-14 09:26:05] [INFO] - com.edu.service.impl.UserService.delUserById(UserService.java:62) - 删除该用户完成!
+[2018-08-14 09:27:51] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:27:52] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 09:28:03] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:53) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:28:04] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:46:00] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:55) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:46:00] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:46:45] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:55) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:46:46] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 09:49:31] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:55) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 09:49:31] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 10:02:32] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:55) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 10:02:32] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}
+[2018-08-14 10:03:52] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!1
+[2018-08-14 10:08:03] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!1
+[2018-08-14 10:11:39] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!1
+[2018-08-14 10:14:39] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!23
+[2018-08-14 10:15:40] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!null
+[2018-08-14 10:16:28] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!25
+[2018-08-14 10:51:37] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!26
+[2018-08-14 10:52:43] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:48) - 插入这个用户完成!27
+[2018-08-14 10:56:48] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:48) - 插入这个用户完成!28
+[2018-08-14 11:00:24] [INFO] - com.edu.service.impl.UserService.show(UserService.java:39) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-14 11:00:24] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}, User{id=28, nickname='啊1', age=34, mail='null'}]
+[2018-08-14 11:02:15] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}, User{id=28, nickname='啊1', age=34, mail='null'}]
+[2018-08-14 11:02:31] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:48) - 插入这个用户完成!29
+[2018-08-14 11:17:00] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:48) - 插入这个用户完成!30
+[2018-08-14 11:18:19] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=30, nickname='啊1', age=22, mail='null'}
+[2018-08-14 11:21:18] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:69) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:23:37] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:61) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 11:23:37] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=30, nickname='啊1', age=23, mail='2222@qq.com'}
+[2018-08-14 11:24:32] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:69) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:26:56] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:69) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:30:51] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:61) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 11:30:52] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=30, nickname='啊3', age=33, mail='11111111@qq.com'}
+[2018-08-14 11:31:06] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=30, nickname='啊3', age=33, mail='11111111@qq.com'}
+[2018-08-14 11:31:32] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:71) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:32:09] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=30, nickname='啊4', age=40, mail='3333@qq.com'}
+[2018-08-14 11:35:00] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:48) - 插入这个用户完成!User{id=31, nickname='test1', age=11, mail='null'}
+[2018-08-14 11:35:35] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=31, nickname='test1', age=11, mail='null'}
+[2018-08-14 11:36:07] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:71) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:36:07] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:73) - User{id=31, nickname='test2', age=40, mail='3333@qq.com'}
+[2018-08-14 11:36:28] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:71) - 我执行了这条就没哟走缓存!!!updateUser(User user)
+[2018-08-14 11:36:28] [INFO] - com.edu.service.impl.UserService.updateUser(UserService.java:73) - User{id=31, nickname='test2', age=40, mail='3333@qq.com'}
+[2018-08-14 11:36:57] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=31, nickname='test2', age=40, mail='3333@qq.com'}
+[2018-08-14 11:37:18] [INFO] - com.edu.service.impl.UserService.delUserById(UserService.java:83) - 删除该用户完成!
+[2018-08-14 14:27:11] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:59) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 14:27:11] [INFO] - TestAll.getUserById(TestAll.java:68) - null
+[2018-08-14 14:27:51] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:59) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-14 14:27:52] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=4, nickname='赵六', age=23, mail='876@qq.com'}

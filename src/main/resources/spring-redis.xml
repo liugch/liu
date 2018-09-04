@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!-- scanner redis properties  -->
+    <context:property-placeholder location="classpath:properties/redis.properties" ignore-unresolvable="true"/>
+
+    <!--（1）如果你有多个数据源需要通过<context:property-placeholder管理，且不愿意放在一个配置文件里，那么一定要加上ignore-unresolvable=“true"-->
+    <!--（2）注意新版的（具体从哪个版本开始不清楚，有兴趣可以查一下）JedisPoolConfig的property name，不是maxActive而是maxTotal，而且没有maxWait属性，建议看一下Jedis源码。-->
+    <!-- redis连接池 -->
+    <!-- redis连接池配置-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!--最大空闲数-->
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <!--连接池的最大数据库连接数  -->
+        <property name="maxTotal" value="${redis.maxTotal}"/>
+        <!--最大建立连接等待时间-->
+        <property name="maxWaitMillis" value="${redis.maxWaitMillis}"/>
+        <!--逐出连接的最小空闲时间 默认1800000毫秒(30分钟)-->
+        <property name="minEvictableIdleTimeMillis" value="${redis.minEvictableIdleTimeMillis}"/>
+        <!--每次逐出检查时 逐出的最大数目 如果为负数就是 : 1/abs(n), 默认3-->
+        <property name="numTestsPerEvictionRun" value="${redis.numTestsPerEvictionRun}"/>
+        <!--逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认-1-->
+        <property name="timeBetweenEvictionRunsMillis" value="${redis.timeBetweenEvictionRunsMillis}"/>
+        <!--是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个-->
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+        <!--在空闲时检查有效性, 默认false  -->
+        <property name="testWhileIdle" value="${redis.testWhileIdle}"/>
+    </bean>
+
+    <!--redis连接工厂 -->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          destroy-method="destroy">
+        <property name="poolConfig" ref="jedisPoolConfig"></property>
+        <!--IP地址 -->
+        <property name="hostName" value="${redis.hostName}"></property>
+        <!--端口号  -->
+        <property name="port" value="${redis.port}"></property>
+        <!--如果Redis设置有密码  -->
+        <property name="password" value="${redis.password}"/>
+        <!--客户端超时时间单位是毫秒  -->
+        <property name="timeout" value="${redis.timeout}"></property>
+    </bean>
+    <!-- redis操作模板，这里采用尽量面向对象的模板
+        RedisTemplate 对 RedisConnection 进行了封装。
+        提供连接管理，序列化等功能，它对 Redis 的交互进行了更高层次的抽象，极大的方便和简化了 Redis 的操作。
+     -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <!--如果不配置Serializer，那么存储的时候缺省使用String，如果用User类型存储，那么会提示错误User can't cast to String！！  -->
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+        </property>
+        <!--开启事务  -->
+        <property name="enableTransactionSupport" value="true"></property>
+
+    </bean>
+
+
+
+    <cache:annotation-driven cache-manager="redisCacheManager"/>
+
+    <!-- 配置RedisCacheManager   做为 redis 统一的调度和管理者 -->
+    <bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
+        <constructor-arg name="redisOperations" ref="redisTemplate"/>
+        <property name="defaultExpiration" value="${redis.expiration}"/>
+    </bean>
+
+    <!-- 配置RedisCacheConfig 自定义redis的key生成规则，如果不在注解参数中注明key=“”的话，就采用这个类中的key生成规则生成key-->
+    <bean id="redisCacheConfig" class="com.edu.cache.RedisCacheConfig">
+        <constructor-arg ref="jedisConnectionFactory"/>
+        <constructor-arg ref="redisTemplate"/>
+        <constructor-arg ref="redisCacheManager"/>
+    </bean>
+
+
+</beans>

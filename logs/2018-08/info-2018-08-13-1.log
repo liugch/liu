@@ -1,0 +1,42 @@
+[2018-08-13 09:59:33] [ERROR] - Test.userserviceTest(Test.java:34) - User{id=1, nickname='詹三', age=22, mail='123@qq.com'}
+[2018-08-13 15:57:22] [INFO] - TestAll.userserviceTest(TestAll.java:46) - a
+[2018-08-13 16:01:59] [INFO] - TestAll.userserviceTest(TestAll.java:46) - a
+[2018-08-13 16:01:59] [INFO] - TestAll.userserviceTest(TestAll.java:48) - null
+[2018-08-13 16:04:32] [INFO] - TestAll.userserviceTest(TestAll.java:46) - a
+[2018-08-13 16:04:32] [INFO] - TestAll.userserviceTest(TestAll.java:48) - [b4, b2, b3, b1]
+[2018-08-13 16:06:29] [INFO] - TestAll.userserviceTest(TestAll.java:47) - a
+[2018-08-13 16:07:08] [INFO] - TestAll.userserviceTest(TestAll.java:47) - a
+[2018-08-13 16:07:39] [INFO] - TestAll.userserviceTest(TestAll.java:47) - a
+[2018-08-13 16:07:39] [INFO] - TestAll.userserviceTest(TestAll.java:50) - [b2, b1, b4, b3]
+[2018-08-13 16:13:03] [INFO] - TestAll.userserviceTest(TestAll.java:47) - a
+[2018-08-13 16:13:03] [INFO] - TestAll.userserviceTest(TestAll.java:50) - [b2, b1, b4, b3]
+[2018-08-13 16:13:57] [INFO] - TestAll.userserviceTest(TestAll.java:47) - a
+[2018-08-13 16:13:57] [INFO] - TestAll.userserviceTest(TestAll.java:50) - [b2, b1, b4, b3]
+[2018-08-13 16:21:18] [INFO] - TestAll.userserviceTest(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 16:24:28] [INFO] - TestAll.userserviceTest(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 16:25:43] [INFO] - TestAll.userserviceTest(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:21:36] [INFO] - com.edu.service.impl.UserService.show(UserService.java:32) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 17:21:37] [INFO] - TestAll.userserviceTest(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:21:58] [INFO] - TestAll.userserviceTest(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:25:45] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:31:58] [INFO] - com.edu.service.impl.UserService.show(UserService.java:32) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 17:31:59] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}, User{id=5, nickname='啊1', age=33, mail='null'}, User{id=6, nickname='啊1', age=33, mail='null'}]
+[2018-08-13 17:34:39] [INFO] - com.edu.service.impl.UserService.show(UserService.java:32) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 17:34:39] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:35:35] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:42:43] [INFO] - com.edu.service.impl.UserService.show(UserService.java:32) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 17:42:43] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:43:00] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:44:29] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:47:11] [INFO] - com.edu.service.impl.UserService.getUserById(UserService.java:46) - 我执行了这条就没哟走缓存!!!getUserById()
+[2018-08-13 17:49:51] [INFO] - TestAll.getUserById(TestAll.java:68) - User{id=11, nickname='啊1', age=34, mail='null'}
+[2018-08-13 17:55:16] [INFO] - com.edu.service.impl.UserService.show(UserService.java:32) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 17:55:16] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:55:27] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:55:40] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:41) - 插入这个用户完成!
+[2018-08-13 17:57:48] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 17:58:11] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!
+[2018-08-13 18:06:00] [INFO] - com.edu.service.impl.UserService.show(UserService.java:37) - 我执行了这条就没哟走缓存!!!show()
+[2018-08-13 18:06:01] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 18:06:19] [INFO] - TestAll.show(TestAll.java:54) - [User{id=1, nickname='詹三', age=22, mail='123@qq.com'}, User{id=2, nickname='李四', age=33, mail='44@qq.com'}, User{id=3, nickname='五五', age=34, mail='22@qq.com'}, User{id=4, nickname='赵六', age=23, mail='876@qq.com'}]
+[2018-08-13 18:06:30] [INFO] - com.edu.service.impl.UserService.addUser(UserService.java:46) - 插入这个用户完成!

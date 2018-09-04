@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- log4j2-begin for servlet 2.5
+     <listener>
+           <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+       </listener>
+       <filter>
+           <filter-name>log4jServletFilter</filter-name>
+           <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+       </filter>
+       <filter-mapping>
+           <filter-name>log4jServletFilter</filter-name>
+           <url-pattern>/*</url-pattern>
+           <dispatcher>REQUEST</dispatcher>
+           <dispatcher>FORWARD</dispatcher>
+           <dispatcher>INCLUDE</dispatcher>
+           <dispatcher>ERROR</dispatcher>
+       </filter-mapping>
+    log4j2-end -->
+
+    <!-- log4j2-begin for servlet version >3.0-->
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <!-- log4j2-end -->
+
+    <!--applicationContext  配置文件-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
+
+    <!--【解决】com.mysql.cj.jdbc.Driver failed to unregister it /Abandoned connection cleanup thread-->
+    <!--<listener>
+        <listener-class>com.edu.utils.MyServletContextListener</listener-class>
+    </listener>-->
+
+    <!-- spring 监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 防止spring内存溢出监听器，比如quartz -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+
+    <!--DispatcherServlet是前端控制器设计模式的实现，提供Spring Web MVC的集中访问点，而且负责职责的分派，
+       而且与Spring IoC容器无缝集成，从而可以获得Spring的所有好处。
+       mvc servlet
+    -->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--DispatcherServlet会默认加载[servlet-name]-servlet.xml文件, 就可以不用写下面的-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <!--  <multipart-config>
+             &lt;!&ndash;<location>/temp</location> &lt;!&ndash;临时保存&ndash;&gt;&ndash;&gt;
+              <max-file-size>5242880</max-file-size>&lt;!&ndash;最大可被上传的文件5MB&ndash;&gt;
+              <max-request-size>20971520</max-request-size>&lt;!&ndash;总大小20MB&ndash;&gt;
+              <file-size-threshold>0</file-size-threshold>
+          </multipart-config>-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- session配置 -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+
+    <!--使请求支持put delete-->
+    <filter>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <servlet-name>dispatcher</servlet-name>
+    </filter-mapping>
+
+
+    <!-- 配置字符集 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <!--设置为true则强制覆盖之前的编码格式-->
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
+        

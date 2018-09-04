@@ -1,0 +1,5 @@
+[2018-08-17 14:15:05] [INFO] - com.edu.snmp.groovy.util.SnmpData.snmpGet(SnmpData.java:92) - -------> 发送PDU <-------127.0.01
+[2018-08-17 14:15:05] [INFO] - com.edu.snmp.groovy.util.SnmpData.snmpGet(SnmpData.java:101) - 127.0.01response pdu size is 1
+[2018-08-17 14:15:05] [INFO] - com.edu.snmp.groovy.util.SnmpData.snmpGet(SnmpData.java:102) - 127.0.01response pdu size is RESPONSE[requestID=711311990, errorStatus=Success(0), errorIndex=0, VBS[1.3.6.1.2.1.1.1.0 = Hardware: Intel64 Family 6 Model 142 Stepping 9 AT/AT COMPATIBLE - Software: Windows Version 6.3 (Build 14393 Multiprocessor Free)]]
+[2018-08-17 14:15:05] [INFO] - com.edu.snmp.groovy.util.SnmpData.snmpGet(SnmpData.java:106) - 1.3.6.1.2.1.1.1.0 = Hardware: Intel64 Family 6 Model 142 Stepping 9 AT/AT COMPATIBLE - Software: Windows Version 6.3 (Build 14393 Multiprocessor Free)
+[2018-08-17 14:15:05] [INFO] - com.edu.snmp.groovy.util.SnmpData.snmpGet(SnmpData.java:109) - SNMP GET one OID value finished !

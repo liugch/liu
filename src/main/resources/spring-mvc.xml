@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--mvc 注解驱动-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <!--处理返回字符串乱码问题-->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <!-- 设置响应支持的类型 -->
+                        <value>text/html;charset=UTF-8</value>
+                        <!-- 设置请求body支持的类型 -->
+                        <value>application/x-www-form-urlencoded</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--扫描注解包 com.edu.controller 下   配置这条便可移除 <context:annotation-config/> -->
+    <!--   <context:component-scan base-package="com.edu.work">
+           <context:include-filter type="annotation"
+                                   expression="org.springframework.stereotype.Controller"/>
+       </context:component-scan>-->
+    <context:component-scan base-package="com.edu.controller"/>
+
+    <!--视图解析-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <!--servlet在找页面时，走的是dispatcherServlet路线。找不到的时候会报404
+            加上这个默认的servlet时候，servlet在找不到的时候会去找静态的内容。-->
+    <mvc:resources mapping="/assets/js/**" location="/assets/js/"/>
+    <mvc:resources mapping="/assets/css/**" location="/assets/css/"/>
+    <mvc:resources mapping="/assets/img/**" location="/assets/img/"/>
+    <mvc:resources mapping="/assets/fonts/**" location="/assets/fonts/"/>
+    <mvc:resources mapping="/upload/img/**" location="/upload/img/"/>
+    <!-- <mvc:resources mapping="/qqface/arclist/**" location="/qqface/arclist/"/>-->
+
+    <!-- 用于将对象转换为 JSON  转换器-->
+
+
+    <!-- <bean id="messageSource"
+           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+         <property name="basename" value="classpath:messages"/>
+         <property name="fileEncodings" value="utf-8"/>
+         <property name="cacheSeconds" value="120"/>
+     </bean>
+
+     &lt;!&ndash; 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册&ndash;&gt;
+     <bean id="validator"
+           class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+         <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+         &lt;!&ndash; 如果不加默认到 使用classpath下的 ValidationMessages.properties &ndash;&gt;
+         <property name="validationMessageSource" ref="messageSource"/>
+     </bean>-->
+
+
+    <!-- bean视图解析器 -->
+    <!--<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
+          p:order="10" />-->
+
+    <!-- XMl及JSON视图解析器配置 -->
+    <!--<bean id="userListJson"
+       class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"
+       p:renderedAttributes="userList" />-->
+
+    <!--<bean id="userListJson"
+          class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+        <property name="renderedAttributes">
+            <set>
+                <value>userList</value>
+                <value>School</value>
+                <value>Work</value>
+            </set>
+        </property>
+    </bean>-->
+
+</beans>
